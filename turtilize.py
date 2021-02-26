@@ -13,12 +13,12 @@ try:
 except:
     print("Please specify an image!")
     exit(-1)
-RESIZE_FACTOR = 4
+RESIZE_FACTOR = 6
 SCREEN_WIDTH = 1900
 SCREEN_HEIGHT = 1000
 POINT_DISTANCE = 3
-TURTLE_SHAPE = "arrow"  # ["arrow", "turtle", "circle", "square", "triangle", "classic"]
-STAMP_MODE = True
+TURTLE_SHAPE = "circle"  # ["arrow", "turtle", "circle", "square", "triangle", "classic"]
+STAMP_MODE = False
 TURTLE_SIZE = (0.1, 0.1, 0.1)
 OUTPUT_NAME = "output.eps"
 
@@ -62,7 +62,7 @@ screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 def draw(space, num_rows, num_cols, pic): 
     for i in range(num_rows): 
         for j in range(num_cols):
-            if pic[i, j] == color:
+            if pic[i, j] == 0: #color
                 if STAMP_MODE:
                     pen.stamp()
                 else:
